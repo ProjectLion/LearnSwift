@@ -10,6 +10,8 @@ import UIKit
 
 // 基础运算符。Swift的基础运算符与大多数语言的基础运算符用法一致。下面只提几个特殊的
 
+// Swift 3.0之后Float、Double就不能使用 % 进行取模操作了。%只支持Int型
+
 // ">"、"<"、">="、"<="。比较运算符，在Swift中字符串可以直接进行比较
 let str1: String = "a"
 let str2 = "b"
