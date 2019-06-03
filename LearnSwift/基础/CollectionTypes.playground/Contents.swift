@@ -63,3 +63,14 @@ doubleDict.values.count
 doubleDict.removeValue(forKey: 0.2)        // 移除字典中key对应的键值对，如果key对应的value不存在则返回nil。
 doubleDict.isEmpty      // 判断字典使用为空
 print("移除0.2后： \(doubleDict)")
+
+
+// Swift中还有一个集合类型叫做 元组。元组中包含了两个值，该值可以是任意类型。元组可以用在Switch语句中。语法如下:
+// var tuple = (str: "1", int: 1)       // 元组的定义。str 和 int为元素名称。
+// var tuple: (String, Int) = ()        // 也可以指定元组的元素类型。
+var tuple = ("1", 1)                      // 也可以省略元素的名称和元素类型不写。自动类型推导，元素名称默认使用0、1(从左往右)表示
+// 取值 直接使用点语法
+print(tuple.0)
+// 赋值
+tuple.1 = 4
+print(tuple)
