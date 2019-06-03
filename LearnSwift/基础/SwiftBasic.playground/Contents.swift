@@ -14,6 +14,11 @@ import UIKit
 //let name3 ="value"      // 错误
 //let name2="value"       // 正确 但不美观
 
+// 断言  asset 是一种实时检测条件是否为true的方法
+// 如果条件为true，那么代码继续执行
+// 如果条件为false，就抛出错误信息，直接终止程序的运行
+assert(false, "抛出的错误信息")
+
 // 定义别名。typealias 自定义的名字 = 要定义别名的类型(可以是系统的类型，可以是自己写的类型)
 typealias MyInt = Int
 
@@ -45,18 +50,26 @@ print(🐶)
 print(狗)
 
 /* 方法的定义 */
+
 // 多参有返回值 （有返回值必须要有return）
-//func <#方法名#>(<#参数一#>: <#参数类型#>, <#参数二#>: <#参数类型#>) -> <#返回值类型#> {
-//  return <#value#>
-//}
+// pram1、pram2为外部参数名，给调用者看的。在函数内部使用str、str1进行操作
+// 外部参数名可以省略，或者使用下划线_代替(效果相当于省略不写)
+func haveReturnValue(pram1 str: String, _ str1: String) -> String {
+  return str + str1
+}
+haveReturnValue(pram1: "hello", "world")
+// 如果为参数提供了外部参数名，则在调用方法时必须始终使用该外部名
+
 // 无参有返回值
 //func <#方法名#>() -> <#返回值类型#> {
 //
 //}
+
 // 无参无返回值
 //func <#方法名#>() {
 //
 //}
+
 // 参数默认值
 func defaultPram(pram: Int = 1) -> Int {
     return pram + 10
