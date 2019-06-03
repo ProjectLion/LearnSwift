@@ -1,10 +1,10 @@
 //
-//  SwiftBasic_String.swift
 //  LearnSwfit
-//
-//  Created by Ht on 2019/5/30.
+//  Created by Ht.
 //  Copyright © 2019 Ht. All rights reserved.
 //
+
+// 所有实例均使用plaground演示，为了方便各位查看结果。可在代码左边对应的行数点击运行按钮，运行到指定的行从而验证代码的有效性。无需启动整个程序。
 
 import UIKit
 
@@ -43,3 +43,31 @@ let num1 = 1
 let num_1 = 1
 print(🐶)
 print(狗)
+
+/* 方法的定义 */
+// 多参有返回值 （有返回值必须要有return）
+//func <#方法名#>(<#参数一#>: <#参数类型#>, <#参数二#>: <#参数类型#>) -> <#返回值类型#> {
+//  return <#value#>
+//}
+// 无参有返回值
+//func <#方法名#>() -> <#返回值类型#> {
+//
+//}
+// 无参无返回值
+//func <#方法名#>() {
+//
+//}
+// 参数默认值
+func defaultPram(pram: Int = 1) -> Int {
+    return pram + 10
+}
+defaultPram()          // 调用使用默认参数值
+defaultPram(pram: 10)      // 自己传入参数值
+// 改变外部传入的参数值 在参数类型之前加上 inout关键字
+var str = "change befor"
+func changePram(pram: inout String) {
+    pram = "change after"
+}
+changePram(pram: &str)
+print(str)          // 输出change after
+
