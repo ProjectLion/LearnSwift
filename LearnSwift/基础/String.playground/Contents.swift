@@ -1,8 +1,6 @@
 //
-//  SwiftBasic_String.swift
 //  LearnSwfit
-//
-//  Created by Ht on 2019/5/30.
+//  Created by Ht.
 //  Copyright © 2019 Ht. All rights reserved.
 //
 
@@ -59,5 +57,4 @@ let _ = mp4Str.count
 let ocStr = mp4Str as NSString
 print((mp4Str as NSString).length)         // OC中字符串的长度。
 print(ocStr.substring(with: NSRange(location: 0, length: 3)))       // 截取从第0个字符开始，往后3个字符的字符串。这个比上面的Swift字符串截取要方便很多，所以在开发中也经常将Swift中的类型转为OC类型后使用，各取所长
-
 
