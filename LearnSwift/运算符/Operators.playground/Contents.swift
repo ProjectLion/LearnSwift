@@ -29,3 +29,5 @@ class Person {
 let p1 = Person()
 let p2 = p1
 print(p1 === p2)            // 输出 ''true''
+
+// Swift中不能使用 "--"、"++"。可以使用 "-="、"+="
