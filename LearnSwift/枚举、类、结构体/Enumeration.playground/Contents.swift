@@ -34,7 +34,7 @@ print(card.rawValue)            // 红桃
 // 也可以使用rawValue来构造一个枚举实例，eg:
 // 构造一个Card实例。这里有个问题，它构造出来带着问好?，说明有可能你传入的rawValue不存在于它的case条件中。
 let cardEnum = Card(rawValue: "♣️")
-print(cardEnum?.rawValue)           // 输出 nil
+print(cardEnum!.rawValue)           // 输出 nil
 
 // Int类型的枚举
 enum Num: Int {       // Int型枚举在不设置值时系统默认分配从0开始
