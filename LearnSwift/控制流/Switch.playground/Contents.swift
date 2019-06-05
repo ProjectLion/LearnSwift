@@ -25,6 +25,8 @@ case .two:
 case .three:
     break
 }
+
+/*********** 分割线 ***********/
 // 匹配 Int 区间匹配
 let int = 100
 switch int {
@@ -42,6 +44,8 @@ case 200, 300, 400, 500:        // 也可以将匹配条件一一列出来
 default:
     break       // 由于case条件是Int型，不可能列举完，所以需要加上default
 }
+
+/*********** 分割线 ***********/
 // 匹配String
 let str = "hello"
 switch str {
@@ -52,6 +56,8 @@ case "world":
 default:
     break
 }
+
+/*********** 分割线 ***********/
 // 匹配元组
 let tuple = (10, 20)
 switch tuple {

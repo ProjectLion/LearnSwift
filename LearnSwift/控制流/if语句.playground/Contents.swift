@@ -16,6 +16,7 @@ if b {
     print("条件成立")
 }
 
+/*********** 分割线 ***********/
 // if语句的延伸
 // if let 语句常用于可空类型数据解析 或 向下转换类型
 //
@@ -29,6 +30,7 @@ if let str = optionalStr {          // 如果optionalStr有值，则将值赋给
     print("optionalStr为nil")
 }
 
+/*********** 分割线 ***********/
 // if let 语句的延伸
 //guard let <#constant#> = <#expression#> else { return <#return value#> }
 // guard let 语句的用法类似 if let

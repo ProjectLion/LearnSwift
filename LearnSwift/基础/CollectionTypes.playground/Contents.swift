@@ -13,11 +13,12 @@ import UIKit
 var arr1 = ["a", "b", "c"]          // 类型推断，该数组为: [String]
 let arr2: [Int] = [1, 2, 3]      // 显式声明类型，前面声明数组里装的类型后，等号后面就必须是装什么类型的数据。该数组为: [Int]
 var arr3: Array<String> = ["1", "2", "3"]       // 显式声明类型，该数组为: Array<String>。等价于 [String]
-var arr4: [Any] = []         // 在Swift的数组中可以是不同类型的数据，该数组为: [Any]。Any为任意类型，取出值后用 as! 关键字转换类型
+var arr4: [Any] = []         // 在Swift的数组中可以是不同类型的数据，该数组为: [Any]。Any为任意类型，取出值后用 as 关键字转换类型
 arr4.append("1")        // 在数组中添加字符串 "1"
 arr4.append(2)          // 在数组中添加整数 2
 print(arr4)                 // 输出 ["1", 2]
 
+/*********** 分割线 ***********/
 // Swift中数组可用下标进行值访问(可能会存在越界)。语法为 arr[index]
 // as关键字分为: as、as!、as?
 // as: 1、从派生类转换为基类，向上转型。2、消除二义性。3、在Switch语句中进行对象的类型检测。
@@ -37,6 +38,7 @@ print(arr1[0..<2])          // "0..<2"的意思是0、1 开区间，不包含2�
 // Swift的数组可以跟OC的NSArray无缝转换
 (arr1 as NSArray).addingObjects(from: ["d", "e"])
 
+/*********** 分割线 ***********/
 /* 字典Dictionary */
 // Dictionary是一个以成对的键值对(Key: Value)组成的集合，默认情况下Swift中的所有基本类型(String, Int, Bool, Double)均可以用作字典的键(Key)。在实际开发中一般使用String作为Key
 var doubleDict = [0.1: "0.1"]            // Double作为Key
@@ -65,6 +67,7 @@ doubleDict.isEmpty      // 判断字典使用为空
 print("移除0.2后： \(doubleDict)")
 
 
+/*********** 分割线 ***********/
 // Swift中还有一个集合类型叫做 元组。元组中包含了两个值，该值可以是任意类型。元组可以用在Switch语句中。语法如下:
 // var tuple = (str: "1", int: 1)       // 元组的定义。str 和 int为元素名称。
 // var tuple: (String, Int) = ()        // 也可以指定元组的元素类型。

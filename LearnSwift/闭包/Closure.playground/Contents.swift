@@ -54,7 +54,7 @@ testClos(2, 5)          // 10
 testClos = { $0 * $1 }          // 这是闭包最简洁的写法。使用$符捕获参数、省略掉return
 testClos(3, 5)          // 15
 
-
+/*********** 分割线 ***********/
 // 闭包能够从上下文中捕获变量、常量，从而用在自身的作用域中。
 // eg:
 var num = 1
@@ -64,6 +64,7 @@ let changeNumClosure = {
 changeNumClosure()
 print("改变后的num: \(num)")
 
+/*********** 分割线 ***********/
 // 使用闭包作为函数参数。注意()的范围，别看懵了
 func closureTest(num: Int, closure: (String, Int) -> String) -> String {
     return closure("I am", num)
@@ -78,22 +79,25 @@ closureTest(num: 1, closure: closure3)   // I am ht
 closureTest(num: 1, closure: { $1 == 0 ? "I am ht" : "I am other" })    // I am other
 closureTest(num: 1) { $1 == 0 ? "I am ht" : "I am other" }   // I am other
 
+/*********** 分割线 ***********/
 // 上面说到尾随闭包。下面为大家介绍逃逸闭包: 逃逸闭包、非逃逸闭包
 // 在Swift 3.0以后，将闭包传递到函数中时，系统会将其默认为非逃逸闭包@noescape
 // 逃逸闭包要在闭包前加上@escaping 关键字
 
 // 非逃逸闭包的生命周期与函数相同: 1、闭包作为参数传入函数，2、函数中调用闭包，3、函数退出，闭包声明周期结束
-// 逃逸闭包的生命周期比函数长，也就是说该闭包会“逃逸”出函数的作用域，所以即使退出了函数它依然会被执行调用。: 1、闭包作为参数传入函数，2、函数退出，3、闭包被调用，声明周期结束
+// 逃逸闭包的生命周期比函数长，也就是说该闭包会“逃逸”出函数的作用域，所以即使退出了函数它依然能被执行调用。: 1、闭包作为参数传入函数，2、函数退出，3、闭包被调用，声明周期结束
 // 上面的closureTest中的closure闭包参数属于非逃逸闭包, 即函数退出，闭包生命周期结束
 // 逃逸闭包，eg:  如果不加@escaping关键字会编译出错
 func escapingClos(closure:@escaping (Int) -> Int) {
-    DispatchQueue.global().async {
-        DispatchQueue.main.async {
+    DispatchQueue.global().async {      // 在global队列中异步提交一个任务
+        DispatchQueue.main.async {     // 在主线程中队列中异步提交一个任务
             print(closure(1))
         }
     }
 }
 escapingClos(closure: { $0 })
+
+/*********** 分割线 ***********/
 // 经常使用逃逸闭包的场景有:
 // 1、在线程队列中异步调用闭包，比如网络请求成功 or 失败的回调。这个队列会持有闭包的引用，直到请求成功 or 失败
 // 2、存储闭包作为属性、全局变量作稍后使用。eg:
