@@ -184,9 +184,11 @@ class Dog: Animal {
         print("dog function")
     }
     
-    // 如果你想某个计算属性、存储属性、方法、构造器(构造方法)必须被子类重写，那么你可以在其之前加上required关键字，子类重写不重写就会报错
-    required func selfFunc() {
-        print("selfFunc")
+    // 如果你想某个构造器(构造方法)必须被子类重写，那么你可以在其之前加上required关键字，子类不重写就会报错。
+    // 注意。required关键字只能用在构造器上
+    required init(naaaame: String) {
+        self.breed = ""
+        super.init(name: naaaame)
     }
     
 }
@@ -195,10 +197,6 @@ class TianYuanDog: Dog {
     override func myFunction() {
         super.myFunction()          // 调用父类的myFunction，这样就不会覆盖父类的方法实现。也可以不调用，直接覆盖
         print("TianYuanDog function")
-    }
-    
-    override func selfFunc() {
-        
     }
     
 }
