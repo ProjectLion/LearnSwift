@@ -113,7 +113,7 @@ class Animal {
 }
 
 // 实例化一个Animal实例对象
-let animal = Animal(name: "旺财")
+let animal = Animal(name: "旺财")         // 这是调用了我们自定义的init(name: String)，直接用()，省略了init
 print(animal.food)                  // 食物
 animal.food = "🦴"
 animal.home = "hello"
