@@ -58,3 +58,18 @@ let ocStr = mp4Str as NSString
 print((mp4Str as NSString).length)         // OC中字符串的长度。
 print(ocStr.substring(with: NSRange(location: 0, length: 3)))       // 截取从第0个字符开始，往后3个字符的字符串。这个比上面的Swift字符串截取要方便很多，所以在开发中也经常将Swift中的类型转为OC类型后使用，各取所长
 
+let str = "string"
+
+let intStr = "2"
+
+let floatStr = "3.0"
+
+let doubleStr = "5.492349"
+
+// 字符串转Double、Int、Float，直接强制将String转换为想要的类型。
+// 通俗一点说如果字符串是数字，那么可以直接转Double、Float、Int；
+// 如果不是数字则转换失败。
+print(Int(str) ?? 998)     // 输出998，转换失败，输出我们给的默认值
+print(Int(intStr) ?? 666)   // 2
+print(Float(floatStr) ?? 0.3) // 3.0
+print(Double(doubleStr) ?? 0)  // 5.492349
