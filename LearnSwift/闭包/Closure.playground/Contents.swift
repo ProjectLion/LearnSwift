@@ -90,10 +90,11 @@ closureTest(num: 1) { $1 == 0 ? "I am ht" : "I am other" }   // I am other
 // 逃逸闭包，eg:  如果不加@escaping关键字会编译出错
 func escapingClos(closure:@escaping (Int) -> Int) {
     DispatchQueue.global().async {      // 在global队列中异步提交一个任务
-        DispatchQueue.main.async {     // 在主线程中队列中异步提交一个任务
-            print(closure(1))
+        DispatchQueue.main.async {     // 在主线程队列中异步提交一个任务
+            print("闭包return: \(closure(1))")
         }
     }
+    print("函数return")
 }
 escapingClos(closure: { $0 })
 
