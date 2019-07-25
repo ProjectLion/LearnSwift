@@ -186,9 +186,14 @@ class Dog: Animal {
     
     // 如果你想某个构造器(构造方法)必须被子类重写，那么你可以在其之前加上required关键字，子类不重写就会报错。
     // 注意。required关键字只能用在构造器上
-    required init(naaaame: String) {
-        self.breed = ""
-        super.init(name: naaaame)
+//    required init(naaaame: String) {
+//        self.breed = ""
+//        super.init(name: naaaame)
+//    }
+    
+    // deinit。万物有生成必然有消逝，deinit方法就是init构造器的对立。在这个类的实例被释放之前会调用。反构造
+    deinit {
+        
     }
     
 }
@@ -198,7 +203,7 @@ class TianYuanDog: Dog {
         super.myFunction()          // 调用父类的myFunction，这样就不会覆盖父类的方法实现。也可以不调用，直接覆盖
         print("TianYuanDog function")
     }
-    
 }
 let tyDog = TianYuanDog(name: "", breed: "")            // 自动继承了父类的指定构造器
 tyDog.myFunction()          // 输出 dog function -> TianYuanDog function
+
